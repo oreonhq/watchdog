@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{.Title}}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="https://oreonhq.com/">Oreon HQ website</a>
+  <a href="https://github.com/oreonhq/watchdog">Site source code</a>
+</div>
+
+<div class="content">
+  <h2>{{.Title}}</h2>
+
+  <ul class="feed">
+    {{range .Items}}
+      <li class="card">
+        <a class="card-title" href="{{.Link}}" target="_blank" rel="noopener">
+          {{.Title}}
+        </a>
+
+        <div class="preview">
+          {{.Description}}
+        </div>
+
+        <small>Published: {{.Published}}</small>
+      </li>
+    {{end}}
+  </ul>
+</div>
+
+</body>
+</html>
